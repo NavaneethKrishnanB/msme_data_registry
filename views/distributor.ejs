@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" type="text/css" href="/styles.css"/>
+    
+    </head>
+    <body align="center">
+        <div class="header">
+            <h2>Welcome <%= distributor.distributorName %></h2>
+            <a href="/listProduct">Find Product</a> 
+            <a href="/logout">log out</a>
+        </div>
+     
+        <h2> you have brought <%= products.length %> products</h2>
+        <br>
+        <table align="center">
+        
+        <% if(products.length>0){%>
+            <tr><th>Product Name</th><th>Quantity</th></tr>
+            <% products.forEach((prods)=>{%>
+
+           <tr> <th><%= prods.productName%></th> <th><%= prods.quantity %></th></tr>
+            <%})%><%}%>
+        </table>
+           <h2>buy products</h2> 
+           <table align="center">
+               <form align="center" action="/buyProduct" method="POST" align="center">
+                <tr>
+                    <th>
+                       product Id:
+                    </th>
+                    <th>
+                        <input type="text" name="productId">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        quantity:
+                    </th>
+                    <th>
+                        <input type="text" name="quantity">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        buyin price:
+                    </th>
+                    <th>
+                        <input type="text" name="buyingPrice">
+                    </th>
+                </tr align="center">
+                <th align="center" colspan="2"><button type="submit">buy</button></th>
+               </form>
+           </table>
+    </body>
+</html>

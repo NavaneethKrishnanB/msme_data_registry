@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/styles.css"/>
+
+    </head>
+    <body align="center">
+        <div class="header">
+                    <h2> welcome <%= owner.ownerName %> of company <%= company.companyName %></h2>
+<a href="logout">log out</a>
+        </div>
+        <br>
+        <h2>you have <%= products.length %> products</h2>
+        <br>
+        <table align="center" >
+        <% if(products!=null) { %>
+            <% products.forEach((prods)=>{ %>
+             <tr><th> <%= prods.productName %></th> </tr>
+                <%})%>
+            <%}%>
+        </table>
+      <h2>add your new products</h2>
+      <table align="center">
+      <form action="/addProduct" method="post" align="center">
+        <tr>
+            <th>
+                Product Name:
+            </th>
+            <th>
+                <input type="text" name="productName">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                productId:
+            </th>
+            <th>
+                <input type="text" name="productId">
+
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Manufacture Cost:
+            </th>
+            <th>
+                <input type="text" name="manufactureCost">
+
+            </th>
+        </tr>
+        <tr align="center">
+           <th align="center" colspan="2"> <button type="submit">add</button></th>
+        </tr>
+    </form>
+    </table>
+    </body>
+</html>

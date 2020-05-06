@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+
+    </head>
+    <body>
+       <div class="header">
+           <h1><p>Welcome to MSME Data Registry</p></h1>
+           <a href="/producerSignIn">Producer sign in</a>
+        <a href="/distributorSignIn">distributor sign in</a>
+       </div>
+        
+        <form action='/login/producer' method='POST' align="center">
+        <tr>
+           
+            <th>
+                <input type="text" name="uid" placeholder="producer ID">
+            </th>
+        </tr>
+        <tr colspan="2" align="center"><button type="submit">
+        <th>login</button></th></tr>
+        </form>
+        <form action='/login/distributor' method='POST' align="center">
+        <tr>
+            
+            <th>
+                <input type="text" name="distributorId" placeholder="distributor ID">
+            </th>
+        </tr>
+        <tr colspan="2" align="center">
+       <th> <button type="submit">login</button></th>
+    </tr>
+        </form>
+    </body>
+</html>

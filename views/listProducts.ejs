@@ -1,0 +1,44 @@
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="/styles.css"/>
+    </head>
+    <body>
+        <div class="header">
+            <% if(flag==="0"){%>
+                <h2>Enter the product to search</h2>
+            <%}%>
+            <% if(flag=="1"){%>
+                <h2>Product not found in database</h2>
+                <%}%>
+            <% if(flag=="2") {%>
+                <h2>Products with this name are</h2>
+                <%}%>
+                <a href="/backToProfile">back To Profile</a>
+        </div>
+       <form action="/listProduct" method="POST" align="center">
+          <input type="text" name="productName" placeholder="enter product name"> </input>
+          <button type="submit">search</button>
+         </form>
+         <table align="center">
+          <% if(flag=="2"){%>
+            <tr>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Product ID
+                </th>
+            </tr>
+                <% products.forEach((prods)=>{%>
+                    <tr><th>
+                       <%= prods.productName %>
+                    </th>
+                <th>
+                    <%= prods.productId %>
+                </th >
+            </tr>
+                <%})%>
+            <%}%></table>
+    
+    </body>
+</html>
